@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://b4h2ub.asia-southeast1.xata.sh/db/portfolio",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
