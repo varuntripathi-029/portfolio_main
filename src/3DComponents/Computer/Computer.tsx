@@ -8,7 +8,7 @@ type Props = {
 
 const Computer = ({ iframe }: Props) => {
   const computer = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
+    "/models/macbook.glb"
   );
   return (
     <>
@@ -54,4 +54,4 @@ const Computer = ({ iframe }: Props) => {
 
 export default Computer
 
-useGLTF.preload("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf")
+useGLTF.preload("/models/macbook.glb")

@@ -12,7 +12,7 @@ const FloatingIcons = () => {
 				maxWidth={2}
 				textAlign="center"
 			>
-				Franck Poingt
+				Varun Tripathi
 			</Text>
 			<Text
 				font="./bangers-v20-latin-regular.woff"

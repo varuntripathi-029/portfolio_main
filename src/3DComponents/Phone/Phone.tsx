@@ -8,7 +8,7 @@ type Props = {
 
 const Phone = ({ iframe }: Props) => {
   const phone = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/iphone-x/model.gltf"
+    "/models/phone.glb"
   );
   return (
     <>
@@ -50,4 +50,4 @@ const Phone = ({ iframe }: Props) => {
 
 export default Phone
 
-useGLTF.preload("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/iphone-x/model.gltf")
+useGLTF.preload("/models/phone.glb")
