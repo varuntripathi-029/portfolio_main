@@ -57,10 +57,10 @@ const Projects: NextPage<Props> = ({ projects }) => {
 		<Layout>
 			<Canvas
 				camera={{
-					fov: 60,
+					fov: 50,
 					near: 0.1,
 					far: 2000,
-					position: [2, 1.75, 4],
+					position: [0, 0.4, 3.2],
 				}}
 			>
 				<Suspense fallback={<Loader variant="text" />}>
@@ -68,7 +68,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
 					{isMobile ? <Phone iframe={iframe} /> : <Computer iframe={iframe} />}
 				</Suspense>
 			</Canvas>
-			<Box ref={boxRef} id='hello'>
+			<Box ref={boxRef} id='hello' sx={{ pointerEvents: "none" }}>
 				<Parallax
 					ref={parallaxRef}
 					pages={projects.length}
@@ -78,6 +78,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
 						left: 0,
 						paddingTop: isMobile ? "16px" : "50px",
 						paddingLeft: isMobile ? "25px" : "100px",
+						pointerEvents: "none",
 					}}
 					className="parallax"
 				>
@@ -86,7 +87,11 @@ const Projects: NextPage<Props> = ({ projects }) => {
 						.sort((a, b) => a.display_order! - b.display_order!)
 						.map((project, index, array) => (
 							<ParallaxLayer key={project.id} offset={index} speed={0.5}>
-								<Box component="section" id={project.name ?? "project_name"}>
+								<Box
+									component="section"
+									id={project.name ?? "project_name"}
+									sx={{ pointerEvents: "auto", width: "fit-content" }}
+								>
 									<ProjectCard
 										project={project}
 										onClick={() => setIframe(project.url ?? "")}
